@@ -19,7 +19,7 @@ public record User(String name, int age, String job, String address) {
     }
 
     private void validateAge(int age){
-        if (age < 18){
+        if (age < UserConstant.USER_AGE){
             throw new IllegalArgumentException("User must be at least 18 years old!");
         }
     }
