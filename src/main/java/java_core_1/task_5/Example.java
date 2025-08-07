@@ -3,15 +3,21 @@ package java_core_1.task_5;
 public class Example {
     public int[] reverse(int[] array) {
 
-        if (array == null){
+        if (array == null) {
             return null;
         }
 
-        int[] reversedArray = new int[array.length];
+        int left = 0;
+        int right = array.length - 1;
 
-        for (int i = 0; i < array.length; i++) {
-            reversedArray[reversedArray.length - 1 - i] = array[i];
+        while (left < right) {
+            int temp = array[left];
+            array[left] = array[right];
+            array[right] = temp;
+
+            left++;
+            right--;
         }
-        return reversedArray;
+        return array;
     }
 }
